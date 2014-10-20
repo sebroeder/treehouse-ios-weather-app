@@ -10,13 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    private let apiKey = "6ea20cf36ccb1749c1d9d3a21609d414"
+    private let apiBaseURL = "https://api.forecast.io/forecast"
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        let windhoek = (latitude: "-22.565269", longitude: "17.071089")
+        let forecastURL = forecastURLWithLatitude(windhoek.latitude, longitude: windhoek.longitude)
+        let weatherData = NSData.dataWithContentsOfURL(forecastURL, options: nil, error: nil)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    func forecastURLWithLatitude(latitude: String, longitude: String) -> NSURL {
+        return NSURL(string: "\(apiBaseURL)/\(apiKey)/\(latitude),\(longitude)")
+    }
+
 
 }
 
