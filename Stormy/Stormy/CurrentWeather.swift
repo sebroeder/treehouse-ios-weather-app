@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct CurrentWeather {
 
@@ -22,6 +23,16 @@ struct CurrentWeather {
         let dateFormatter = NSDateFormatter()
         dateFormatter.timeStyle = .ShortStyle
         return dateFormatter.stringFromDate(weatherDate)
+    }
+
+    var icon: UIImage {
+        switch iconName {
+        case "clear-day", "clear-night", "rain", "snow", "sleet", "wind", "fog", "cloudy",
+             "partly-cloudy-day", "partly-cloudy-night":
+            return UIImage(named: iconName)
+        default:
+            return UIImage(named: "default")
+        }
     }
 
     init(weatherJSON: NSDictionary) {
