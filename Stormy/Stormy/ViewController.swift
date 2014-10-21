@@ -22,13 +22,16 @@ class ViewController: UIViewController {
 
         let downloadTask = sharedSession.downloadTaskWithURL(forecastURL, completionHandler:
             { (location: NSURL!, response: NSURLResponse!, error: NSError!) -> Void in
-                if error == nil {
+
+                let statusCode = (response as NSHTTPURLResponse).statusCode
+
+                if error == nil && statusCode == 200 {
                     let forecastData = NSData(contentsOfURL: location)
                     let forecastJSON = NSJSONSerialization.JSONObjectWithData(forecastData,
                         options: nil, error: nil) as NSDictionary
                 }
         })
-        
+
         downloadTask.resume()
     }
 
