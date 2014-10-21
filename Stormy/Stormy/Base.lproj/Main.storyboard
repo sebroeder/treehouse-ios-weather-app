@@ -47,13 +47,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stormy and rainy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d72-cz-9Vq">
+                                <rect key="frame" x="80" y="452" width="161" height="26"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Zsb-LO-QHG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="40" id="4Gg-n7-jdp"/>
                             <constraint firstAttribute="centerY" secondItem="y7x-AC-iHZ" secondAttribute="centerY" id="5J7-h1-JKV"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="2xB-21-CJx" secondAttribute="bottom" constant="176" id="7SS-QS-bhs"/>
+                            <constraint firstAttribute="centerX" secondItem="d72-cz-9Vq" secondAttribute="centerX" constant="-0.5" id="9dF-pc-XFa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7cU-Aq-SSD" secondAttribute="trailing" constant="40" id="EAm-SZ-rsH"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="d72-cz-9Vq" secondAttribute="bottom" constant="90" id="Ltf-zM-Pt8"/>
                             <constraint firstAttribute="centerX" secondItem="y7x-AC-iHZ" secondAttribute="centerX" constant="-0.5" id="g7I-aC-5cT"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Zsb-LO-QHG" secondAttribute="bottom" constant="177" id="mQU-OK-h7L"/>
                             <constraint firstItem="7cU-Aq-SSD" firstAttribute="top" secondItem="2xB-21-CJx" secondAttribute="bottom" constant="10" id="paJ-1O-fUL"/>
