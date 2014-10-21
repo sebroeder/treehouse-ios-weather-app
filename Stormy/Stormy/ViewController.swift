@@ -12,12 +12,24 @@ class ViewController: UIViewController {
 
     private let apiKey = "6ea20cf36ccb1749c1d9d3a21609d414"
     private let apiBaseURL = "https://api.forecast.io/forecast"
+    private let windhoek = (latitude: "-22.565269", longitude: "17.071089")
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let windhoek = (latitude: "-22.565269", longitude: "17.071089")
+
         let forecastURL = forecastURLWithLatitude(windhoek.latitude, longitude: windhoek.longitude)
-        let weatherData = NSData.dataWithContentsOfURL(forecastURL, options: nil, error: nil)
+        let sharedSession = NSURLSession.sharedSession()
+
+        let downloadTask = sharedSession.downloadTaskWithURL(forecastURL, completionHandler:
+            { (location: NSURL!, response: NSURLResponse!, error: NSError!) -> Void in
+                if error == nil {
+                    let forecastData = NSData(contentsOfURL: location)
+                    let forecastJSON = NSJSONSerialization.JSONObjectWithData(forecastData,
+                        options: nil, error: nil) as NSDictionary
+                }
+        })
+        
+        downloadTask.resume()
     }
 
     override func didReceiveMemoryWarning() {
