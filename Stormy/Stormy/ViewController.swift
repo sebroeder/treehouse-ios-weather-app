@@ -30,6 +30,7 @@ class ViewController: UIViewController {
                     let forecastJSON = NSJSONSerialization.JSONObjectWithData(forecastData,
                         options: nil, error: nil) as NSDictionary
                     let currentWeather = CurrentWeather(weatherJSON: forecastJSON)
+                    println(currentWeather.currentTime!)
                 }
         })
 
