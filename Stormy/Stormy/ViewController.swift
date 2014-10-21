@@ -29,6 +29,8 @@ class ViewController: UIViewController {
                     let forecastData = NSData(contentsOfURL: location)
                     let forecastJSON = NSJSONSerialization.JSONObjectWithData(forecastData,
                         options: nil, error: nil) as NSDictionary
+                    let currentWeather = CurrentWeather(weatherJSON: forecastJSON)
+                    println(currentWeather.timeString)
                 }
         })
 
@@ -42,7 +44,6 @@ class ViewController: UIViewController {
     func forecastURLWithLatitude(latitude: String, longitude: String) -> NSURL {
         return NSURL(string: "\(apiBaseURL)/\(apiKey)/\(latitude),\(longitude)")
     }
-
 
 }
 
