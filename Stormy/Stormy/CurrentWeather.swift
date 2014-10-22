@@ -29,9 +29,9 @@ struct CurrentWeather {
         switch iconName {
         case "clear-day", "clear-night", "rain", "snow", "sleet", "wind", "fog", "cloudy",
              "partly-cloudy-day", "partly-cloudy-night":
-            return UIImage(named: iconName)
+            return UIImage(named: iconName)!
         default:
-            return UIImage(named: "default")
+            return UIImage(named: "default")!
         }
     }
 

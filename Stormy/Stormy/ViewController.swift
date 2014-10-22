@@ -26,11 +26,10 @@ class ViewController: UIViewController {
                 let statusCode = (response as NSHTTPURLResponse).statusCode
 
                 if error == nil && statusCode == 200 {
-                    let forecastData = NSData(contentsOfURL: location)
+                    let forecastData = NSData(contentsOfURL: location)!
                     let forecastJSON = NSJSONSerialization.JSONObjectWithData(forecastData,
                         options: nil, error: nil) as NSDictionary
                     let currentWeather = CurrentWeather(weatherJSON: forecastJSON)
-                    println(currentWeather.timeString)
                 }
         })
 
@@ -41,7 +40,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    func forecastURLWithLatitude(latitude: String, longitude: String) -> NSURL {
+    func forecastURLWithLatitude(latitude: String, longitude: String) -> NSURL! {
         return NSURL(string: "\(apiBaseURL)/\(apiKey)/\(latitude),\(longitude)")
     }
 
