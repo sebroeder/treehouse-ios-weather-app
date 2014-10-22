@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -59,24 +60,33 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Windhoek" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v1-oI-5wy">
-                                <rect key="frame" x="112" y="94" width="96" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Windhoek, NA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6v1-oI-5wy">
+                                <rect key="frame" x="103" y="109" width="138" height="26"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="partly-cloudy-day" translatesAutoresizingMaskIntoConstraints="NO" id="Fyx-TD-dmJ">
+                                <rect key="frame" x="38" y="92" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Fyx-TD-dmJ" secondAttribute="height" multiplier="1:1" id="7TQ-w5-GrE"/>
+                                    <constraint firstAttribute="width" constant="60" id="gl7-j9-0sn"/>
+                                    <constraint firstAttribute="height" constant="60" id="uHE-X0-owU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Zsb-LO-QHG" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="40" id="4Gg-n7-jdp"/>
                             <constraint firstAttribute="centerY" secondItem="y7x-AC-iHZ" secondAttribute="centerY" id="5J7-h1-JKV"/>
+                            <constraint firstItem="6v1-oI-5wy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="89" id="6pr-A8-r9X"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="2xB-21-CJx" secondAttribute="bottom" constant="176" id="7SS-QS-bhs"/>
-                            <constraint firstAttribute="centerX" secondItem="6v1-oI-5wy" secondAttribute="centerX" id="8He-lO-gCB"/>
                             <constraint firstAttribute="centerX" secondItem="d72-cz-9Vq" secondAttribute="centerX" constant="-0.5" id="9dF-pc-XFa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7cU-Aq-SSD" secondAttribute="trailing" constant="40" id="EAm-SZ-rsH"/>
                             <constraint firstItem="y7x-AC-iHZ" firstAttribute="top" secondItem="5xA-Be-bUh" secondAttribute="bottom" constant="-17" id="Koe-16-3YC"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="d72-cz-9Vq" secondAttribute="bottom" constant="90" id="Ltf-zM-Pt8"/>
-                            <constraint firstItem="6v1-oI-5wy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="74" id="eRS-ZF-ciu"/>
+                            <constraint firstAttribute="centerX" secondItem="6v1-oI-5wy" secondAttribute="centerX" constant="-12" id="avR-IA-6x0"/>
+                            <constraint firstItem="Fyx-TD-dmJ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="72" id="eva-XT-p6f"/>
                             <constraint firstAttribute="centerX" secondItem="y7x-AC-iHZ" secondAttribute="centerX" constant="-0.5" id="g7I-aC-5cT"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Zsb-LO-QHG" secondAttribute="bottom" constant="177" id="mQU-OK-h7L"/>
                             <constraint firstItem="7cU-Aq-SSD" firstAttribute="top" secondItem="2xB-21-CJx" secondAttribute="bottom" constant="10" id="paJ-1O-fUL"/>
@@ -84,6 +94,7 @@
                             <constraint firstItem="OVL-oF-N34" firstAttribute="top" secondItem="Zsb-LO-QHG" secondAttribute="bottom" constant="10" id="sII-pZ-fN3"/>
                             <constraint firstItem="OVL-oF-N34" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="40" id="uAh-jp-ogY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2xB-21-CJx" secondAttribute="trailing" constant="40" id="x0g-dD-PPB"/>
+                            <constraint firstItem="6v1-oI-5wy" firstAttribute="leading" secondItem="Fyx-TD-dmJ" secondAttribute="trailing" constant="5" id="yiM-VV-VCx"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -92,6 +103,9 @@
             <point key="canvasLocation" x="74" y="128"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="partly-cloudy-day" width="52" height="33"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
