@@ -97,6 +97,14 @@
                             <constraint firstItem="6v1-oI-5wy" firstAttribute="leading" secondItem="Fyx-TD-dmJ" secondAttribute="trailing" constant="5" id="yiM-VV-VCx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentTimeLabel" destination="5xA-Be-bUh" id="IZE-CM-R6w"/>
+                        <outlet property="humidityLabel" destination="OVL-oF-N34" id="D1S-Tq-Nyd"/>
+                        <outlet property="precipitationLabel" destination="7cU-Aq-SSD" id="tOZ-V7-40M"/>
+                        <outlet property="summaryLabel" destination="d72-cz-9Vq" id="nrz-Vu-1Jm"/>
+                        <outlet property="temperatureLabel" destination="y7x-AC-iHZ" id="p2m-aD-o2A"/>
+                        <outlet property="weatherIconView" destination="Fyx-TD-dmJ" id="myw-eh-HoV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
