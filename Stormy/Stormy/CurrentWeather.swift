@@ -11,12 +11,13 @@ import UIKit
 
 struct CurrentWeather {
 
-    let currentTime: Int
+    private let currentTime: Int
+    private let iconName: String
+
     let temperature: Int
     let humidity: Double
     let precipitationProbability: Double
     let summary: String
-    let iconName: String
 
     var timeString: String {
         let weatherDate = NSDate(timeIntervalSince1970: NSTimeInterval(currentTime))
@@ -29,9 +30,9 @@ struct CurrentWeather {
         switch iconName {
         case "clear-day", "clear-night", "rain", "snow", "sleet", "wind", "fog", "cloudy",
              "partly-cloudy-day", "partly-cloudy-night":
-            return UIImage(named: iconName)
+            return UIImage(named: iconName)!
         default:
-            return UIImage(named: "default")
+            return UIImage(named: "default")!
         }
     }
 
@@ -39,11 +40,11 @@ struct CurrentWeather {
         let current = weatherJSON["currently"] as NSDictionary
 
         currentTime = current["time"] as Int
+        iconName = current["icon"] as String
         temperature = current["temperature"] as Int
         humidity = current["humidity"] as Double
         precipitationProbability = current["precipProbability"] as Double
         summary = current["summary"] as String
-        iconName = current["icon"] as String
     }
 
 }
