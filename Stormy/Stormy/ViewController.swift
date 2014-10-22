@@ -47,9 +47,7 @@ class ViewController: UIViewController {
         let downloadTask = sharedSession.downloadTaskWithURL(forecastURL, completionHandler: {
             (location: NSURL!, response: NSURLResponse!, error: NSError!) -> Void in
 
-            let statusCode = (response as NSHTTPURLResponse).statusCode
-
-            if error == nil && statusCode == 200 {
+            if error == nil {
                 let forecastData = NSData(contentsOfURL: location)!
                 let forecastJSON = NSJSONSerialization.JSONObjectWithData(forecastData,
                     options: nil, error: nil) as NSDictionary
@@ -64,6 +62,25 @@ class ViewController: UIViewController {
                     self.humidityLabel.text = "\(currentWeather.humidity)"
                     self.precipitationLabel.text = "\(currentWeather.precipitationProbability)"
                     self.summaryLabel.text = currentWeather.summary
+
+                    self.refreshActivityIndicator.stopAnimating()
+                    self.refreshActivityIndicator.hidden = true
+                    self.refreshButton.hidden = false
+                })
+            } else {
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+
+                    let networkIssueController = UIAlertController(title: "Error",
+                        message: "Unable to load data. Not connected to the internet.",
+                        preferredStyle: .Alert)
+
+                    let okButton = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    networkIssueController.addAction(okButton)
+
+                    let cancelButton = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                    networkIssueController.addAction(cancelButton)
+
+                    self.presentViewController(networkIssueController, animated: true, completion: nil)
 
                     self.refreshActivityIndicator.stopAnimating()
                     self.refreshActivityIndicator.hidden = true
